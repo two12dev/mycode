@@ -20,7 +20,7 @@ def main():
 
         #Set name
         character_name = None
-        if got_dj["name"] == None:
+        if got_dj["name"] == "":
             character_name = got_dj["aliases"][0]
         else:
             character_name = got_dj["name"]
@@ -41,10 +41,10 @@ def main():
 
         #Get pov books
         pov_books_char_in = []
-        for povBook in got_dj["povBooks"]:
-            povBook_resp = requests.get(povBook)
-            povBook_name = povBook_resp.json()
-            books_char_in.append(povBook_name["name"])
+        for book in got_dj["povBooks"]:
+            book_resp = requests.get(book)
+            book_name = book_resp.json()
+            pov_books_char_in.append(book_name["name"])
             
         #Print all info found
         print("----------------------------------")
