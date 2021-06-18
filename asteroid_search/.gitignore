@@ -1,0 +1,5 @@
+# Files I want to ignore
+config.py
+
+# Byte-compiled / optimized / DLL files
+__pycache__/

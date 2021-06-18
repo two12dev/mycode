@@ -1,0 +1,12 @@
+---
+- name: Simple playbook     # describes the playbook
+  hosts: planetexpress     # this is a reference to a group or host in the inventory
+
+  tasks:
+  - name: "apt module - Install a simple application"
+    apt:
+      name: figlet
+      state: present
+    become: true  # elevates an ansible module to
+                  # "sudo" (linux), "admin" (windows), "enable" (many switches), etc.
+
